@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+//Importamos la interfaz que hemos creado
 import { HousingLocation } from './housing-location';
 
 @Component({
@@ -9,6 +10,7 @@ import { HousingLocation } from './housing-location';
 export class AppComponent {
   title = 'fairhouse';
 
+  //Creamos la propiedad housingLocationList que es un array de tipo HousingLocation(la interfaz que hemos creado e importado) 
   housingLocationList: HousingLocation[] = [
     {
       name: "Acme Fresh Start Housing",
@@ -39,8 +41,10 @@ export class AppComponent {
     }
   ];
 
+  //Creamos propiedad de tipo HousingLocation para guardar el location seleecionado por el usuario
   selectedLocation: HousingLocation | undefined;// = this.housingLocationList[0];
 
+  //El método updateSelectedLocation asociado al evento selectedLocationEvent de housing-list.component.ts actualiza la propiedad selectedLocation con la location que envía el componete hijo housing-list en el evento "selectedLocationEvent"
   updateSelectedLocation(location: HousingLocation) {
     this.selectedLocation = location;
   }
